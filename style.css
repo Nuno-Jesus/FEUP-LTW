@@ -1,0 +1,425 @@
+/*!********************************** GENERAL ***********************************/
+
+:root{
+  --back-color: #F8F8F8;
+  --box-shadow: #ccc8c8;
+  --board-color: #504e4e;
+  --slot-color: #00000073;
+}
+
+html{
+  font-family: monospace;
+  background: var(--back-color);
+  overflow: hidden scroll;
+}
+
+body{
+  margin: 0;
+}
+
+.flex-container{
+  display: flex;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
+.j-start{
+  justify-content: start;
+}
+
+.j-center{
+  justify-content: center;
+}
+
+.j-end{
+  justify-content: end;
+}
+
+.j-between{
+  justify-content: space-between;
+}
+
+button{
+  height: 100%;
+  width: 200px;
+  font: inherit;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+/*!********************************* SCROLLBAR **********************************/
+
+::-webkit-scrollbar{
+  width: 11px;
+  height: 11px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #B3AFB3;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: #8F8C8F;
+}
+
+::-webkit-scrollbar-track{
+  background: #F0F0F0;
+  box-shadow: inset 0 #F0F0F0;
+}
+
+/*!*********************************** NAVBAR ***********************************/
+
+.navbar{
+  height: 60px;
+  width: 100%;
+  background: #313131;
+  color: #FFF;
+  font-size: 1.75em;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;    
+  position: sticky;
+  z-index: 1;
+}
+
+.navbar-container{
+  height: 100%;
+}
+
+.nav-button{
+  background: none;
+  color: #FFF;
+  border: none;
+}
+
+.nav-button:hover{
+  border-radius: 10px;
+  background: #00000073;
+}
+
+.nav-item{
+  text-align: center;
+}
+
+.navbar div{
+  margin: 0 10px 0 10px;
+}
+
+/*!*********************************** SLIDERS **********************************/
+
+.slider{
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  position: absolute;
+  z-index: 2;
+  background: #000000a9;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.slider-content{
+  position: absolute;
+  text-align: left;
+  font-size: 1.25rem;
+  background: rgb(255, 255, 255);
+}
+
+.close-btn {
+  position: absolute;
+  right: 35px;
+  top: 0;
+  color: #F00;
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.close-btn:hover{
+  cursor: pointer;
+  color: #fc4545;
+}
+
+/*!********************************* LOGIN FORM *********************************/
+
+/* The slider form - hidden by default */
+#login-content {
+  width: 300px;
+  height: 260px;
+  border: 3px solid #F1F1F1;
+}
+
+/* Add styles to the form container */
+.login-container {
+  max-width: 100%;
+  padding: 10px;
+  background-color: #FFF;
+}
+
+/* Full-width input fields */
+.login-container input[type=text], .login-container input[type=password] {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #F1F1F1;
+}
+
+/* When the inputs get focus, do something */
+.login-container input[type=text]:focus, .login-container input[type=password]:focus {
+  width: 90%;
+  background-color: #DDD;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.login-container .btn {
+  background-color: #04AA6D;
+  color: #FFF;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  height: 25%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add some hover effects to buttons */
+.login-container .btn:hover, .open-button:hover {
+  opacity: 1;
+} 
+
+.navbar .login:hover .login-slider{
+  display: block;
+}
+
+/*!********************************* SETTINGS **********************************/
+#settings-content{
+  width: 350px;
+  height: 500px;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.settings-form{
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.s-item{
+  width: 98%;
+  text-align: center;
+}
+
+/*!*********************************** RULES ***********************************/
+#rules-content{
+  width: 800px;
+  height: 800px;
+  overflow-y: scroll;
+}
+
+#rules-content img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding-bottom: 30px;
+}
+
+#rules-content ul{
+  text-align: left;
+}
+
+#rules-content > div{
+  margin: 10px;
+}
+
+.rules-title{
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+}
+
+/*!********************************* DISPLAY ***********************************/
+/* The display contains both the board and the game feed in it */
+#display{
+  height: 650px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/*!********************************** FEED *************************************/
+#feed{
+  height: 600px;
+  width: 30%;
+  position: relative;
+  background: none;
+  box-shadow: 0px 0px 50px rgba(141, 141, 141, 0.5);
+  overflow-y: scroll;
+}
+
+.feed-container{
+  height: 100%;
+  width: 100%;
+  position: relative
+}
+
+.buttons{
+  position: absolute;
+  width: 30%;
+  height: 75px;
+  right: 0px;
+}
+
+.leave-button,
+.rankings-button{
+  background-color: #ff3b3b;
+  color: #FFF;
+  width: 100%;
+  height: 25px;
+  margin: 5px;
+  padding: 16px 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+.leave-button:hover,
+.rankings-button:hover{
+  cursor: pointer;
+  opacity: 1;
+}
+
+.leave-button{
+  background-color: #ff3b3b;
+}
+
+.rankings-button{
+  background-color: #04aa6d;
+}
+
+.message{
+  height: 15%;
+  width: 95%;
+  margin: 15px;
+  padding: 5px;
+  color: #FFF;
+}
+
+.message-title,
+.message-content{
+  margin: 5px;
+}
+
+.message-title{
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.message-content{
+  font-size: 14px;
+}
+
+/*!********************************** BOARD ************************************/
+
+#board{
+  width: 1300px;
+  height: 600px;
+  margin: 10px;
+  background: var(--board-color);
+  border-radius: 30px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.board-slots{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.board-slots-line{
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slot{
+  width: 90%;
+  height: 90%;
+  margin: 5px;
+  border-radius: 30px;
+  background: var(--slot-color);
+  position: relative;
+}
+
+.slot:hover{
+  cursor: pointer;
+}
+
+.storage{
+  height: 96%;
+  width: 18%;
+}
+
+.seed{
+  height: 45px;
+  width: 30px;
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(#e92d2d, #940202);
+}
+
+/*!********************************* SCOREBOARD ***********************************/
+.scoreboard{
+  text-align: center;
+  width: 50%;
+  position: absolute;
+  left: 10%;
+  border-collapse: collapse;
+}
+
+.scoreboard th{
+  font-size: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04aa6d;
+  color: white;
+}
+
+.scoreboard th:nth-child(even){
+  background-color: #04aa6d;
+}
+
+.scoreboard th:nth-child(odd){
+  background-color: #2c2c2c;
+}
+
+.scoreboard td{
+  font-size: 15px;
+  height: 30px;
+  background:#fdfdfd;
+}
+
+.scoreboard th,
+.scoreboard td{
+  border: 1px solid #DDD;
+}
+
+
+
+

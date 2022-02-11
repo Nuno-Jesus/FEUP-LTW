@@ -1,0 +1,56 @@
+{
+  "users":
+  [
+    {
+      "nick":"Nuno",
+      "password": "81dc9bdb52d04dc20036dbd8313ed055"
+    },
+
+    {
+      "nick":"Carlos",
+      "password": "81dc9bdb52d04dc20036dbd8313ed055"
+    },
+
+    {
+      "nick":"Nuno2",
+      "password": "81dc9bdb52d04dc20036dbd8313ed055"
+    },
+
+    {
+      "nick":"Carlos2",
+      "password": "81dc9bdb52d04dc20036dbd8313ed055"
+    },
+
+    {
+      "nick":"Nuno3",
+      "password": "81dc9bdb52d04dc20036dbd8313ed055"
+    },
+
+    {
+      "nick":"Carlos3",
+      "password": "81dc9bdb52d04dc20036dbd8313ed055"
+    },
+
+    {
+      "nick":"Nuno4",
+      "password": "81dc9bdb52d04dc20036dbd8313ed055"
+    },
+
+    {
+      "nick":"Carlos4",
+      "password": "81dc9bdb52d04dc20036dbd8313ed055"
+    },
+
+    {
+      "nick":"Nuno5",
+      "password": "81dc9bdb52d04dc20036dbd8313ed055"
+    },
+
+    {
+      "nick":"Carlos5",
+      "password": "81dc9bdb52d04dc20036dbd8313ed055"
+    }
+  ]
+}
+
+  

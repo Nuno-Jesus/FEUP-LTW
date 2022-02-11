@@ -1,0 +1,65 @@
+{
+  "ranking":
+  [
+    {
+      "nick":"Nuno",
+      "victories":"9",
+      "games":"9"
+    },
+
+    {
+      "nick":"Carlos",
+      "victories":"10",
+      "games":"10"
+    },
+
+    {
+      "nick":"Nuno2",
+      "victories":"8",
+      "games":"8"
+    },
+
+    {
+      "nick":"Carlos2",
+      "victories":"7",
+      "games":"7"
+    },
+
+    {
+      "nick":"Nuno3",
+      "victories":"6",
+      "games":"6"
+    },
+
+    {
+      "nick":"Carlos3",
+      "victories":"5",
+      "games":"5"
+    },
+
+    {
+      "nick":"Nuno4",
+      "victories":"4",
+      "games":"4"
+    },
+
+    {
+      "nick":"Carlos4",
+      "victories":"3",
+      "games":"3"
+    },
+
+    {
+      "nick":"Nuno5",
+      "victories":"2",
+      "games":"2"
+    },
+
+    {
+      "nick":"Carlos5",
+      "victories":"1",
+      "games":"1"
+    }
+  ]
+}
+

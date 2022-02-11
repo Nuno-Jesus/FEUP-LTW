@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang = "pt">
+  <head>
+    <meta charset = "UTF-8">
+    <title>Mancala</title>
+
+    <link rel = "stylesheet" href = "style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script type = "module" src = "index.js"></script>
+  </head>
+  
+  <body>
+    <!-- NAVBAR -->
+    <div class = "navbar flex-container">
+      <div class = "logo"> Mancala </div>
+
+      <!-- NAVBAR RIGHT CONTAINER -->
+      <div class = "navbar-container flex-container j-end">
+        <!-- SETTINGS BUTTON -->
+        <div class = "nav-item" id = "settings">
+          <button class = "nav-button">
+            <i class="fa fa-cog"></i>
+            Settings
+          </button>
+        </div>
+
+        <!-- RULES BUTTON  -->
+        <div class = "nav-item" id = "rules">
+          <button class = "nav-button">
+            <i class="fa fa-book"></i>
+            Rules
+          </button>
+        </div>
+
+        <!-- FIND GAME BUTTON -->
+        <div class = "nav-item" id = "findGame">
+          <button class = "nav-button">
+            <i class="fa fa-gamepad"></i>
+            Find game
+          </button>
+        </div>
+
+        <!-- LOGIN BUTTON -->
+        <div class = "nav-item" id = "login">
+          <button class = "nav-button">
+            <i class="fa fa-sign-in"></i>
+            Login
+          </button>
+        </div>
+      </div>  
+    </div> 
+
+    <!-- SETTINGS SLIDER -->
+    <div class = "slider" id = "settings-slider">
+      <span class = "close-btn" >&times;</span>
+      <div class = "slider-content flex-container flex-column" id = "settings-content">
+        <div class = "s-item">
+          <h3>Number of slots</h3>
+          
+          <form class = "s-item-form">
+            <span>4</span><input type = "radio" name = "numSlots" value = "4">
+            <span>5</span><input type = "radio" name = "numSlots" value = "5">
+            <span>6</span><input type = "radio" name = "numSlots" value = "6" checked>
+          </form>
+        </div>  
+
+        <div class = "s-item">
+          <h3>Seeds per slot</h3>
+          
+          <form class = "s-item-form">
+            <span>2</span><input type = "radio" name = "seedsPerSlot" value = "2" >
+            <span>3</span><input type = "radio" name = "seedsPerSlot" value = "3">
+            <span>4</span><input type = "radio" name = "seedsPerSlot" value = "4" checked>
+          </form>
+        </div>
+
+        <div class = "s-item">
+          <h3>Opponent</h3>
+          
+          <form class = "s-item-form">
+            <span>Computer</span><input type = "radio" name = "opponent"  value = "Computer" checked>
+            <span>Player</span><input type = "radio" name = "opponent" value = "Player">
+          </form>
+        </div>
+
+        <div class = "s-item">
+          <h3>First turn</h3>
+          
+          <form class = "s-item-form">
+            <span>Computer</span><input type = "radio" name = "turn" value = "Computer" checked>
+            <span>Player</span><input type = "radio" name = "turn"  value = "Player">
+          </form>
+        </div>
+
+        <div class = "s-item">
+          <h3>AI level</h3>
+          
+          <form class = "s-item-form">
+            <span>1</span><input type = "radio" name = "level" value = "1" checked>
+            <span>2</span><input type = "radio" name = "level" value = "2">
+            <span>3</span><input type = "radio" name = "level" value = "3">
+            <span>4</span><input type = "radio" name = "level" value = "4">
+            <span>5</span><input type = "radio" name = "level" value = "5">
+          </form>
+        </div>
+
+        <div class = "s-item">
+          <h3>Server port</h3>
+          
+          <form class = "s-item-form">
+            <span>8008</span><input type = "radio" name = "port" value = "8008" checked>
+            <span>9001</span><input type = "radio" name = "port" value = "9001">
+          </form>
+        </div>      
+      </div>
+    </div>
+
+    <!-- RULES SLIDER -->
+    <div class = "slider" id = "rules-slider">
+      <span class = "close-btn" >&times;</span>
+      <div class = "slider-content flex-container flex-column" id = "rules-content">
+        
+        <div class = "flex-container flex-column">
+          <span class = "rules-title">Início do jogo</span>
+          <ul>
+            <li>Os armazéns estão vazios (sem sementes)</li>
+            <li>As restantes cavidades têm o mesmo número de sementes</li>
+          </ul>
+          <img src = "https://www.dcc.fc.up.pt/~zp/SeWenta/LTW21/praticas/trabalho/regras/inicial.png"
+            alt = "Início de jogo">
+        </div>
+
+        <hr>
+
+        <div class = "flex-container flex-column">
+          <span class = "rules-title">Forma de jogar</span>
+          <ul>
+            <li>Jogadores <strong>semeiam</strong> as suas sementes alternadamente</li>
+            <li>Na sua vez semeiam a partir de uma das suas cav classades</li>
+            <li>
+              Consoante a situação da última semente semeada, podem:
+              <ul>
+                <li>voltar a jogar</li>
+                <li>ficar com algumas sementes do adversário</li>
+              </ul>
+            </li>
+            <li>Termina quando um dos jogadores fica sem sementes</li>
+          </ul>
+          <img src = "https://www.dcc.fc.up.pt/~zp/SeWenta/LTW21/praticas/trabalho/regras/inicial.png"
+            alt = "Forma de jogar">
+        </div>
+
+        <hr>
+
+        <div class = "flex-container flex-column">
+          <span class = "rules-title">Começar a semear</span>
+          <ul>
+            <li>Escolher uma cavidade do seu lado (que não o armazém)</li>
+            <li>Recolher todas as N sementes dessa cavidade</li>
+            <li>Colocar 1 semente nas N cavidade seguintes</li>
+            <li>A semeadura é feita no sentido anti-horário</li>
+          </ul>
+          <img src = "https://www.dcc.fc.up.pt/~zp/SeWenta/LTW21/praticas/trabalho/regras/primeira-0.png"
+            alt = "Começar a semear">
+        </div>
+
+        <hr>
+
+        <div class = "flex-container flex-column">
+          <span class = "rules-title">Continuar a semear</span>
+          <ul>
+            <li>Se a cavidade seguinte for o seu armazém, semear também</li>
+            <li>Sobrando sementes, continuar no lado do adversário</li>
+            <li>Se atingir o armazém do adversário, <strong>não</strong> semear</li>
+            <li>Mas depois continuar do seu lado, se ainda tiver sementes</li>
+          </ul>
+          <img src = "https://www.dcc.fc.up.pt/~zp/SeWenta/LTW21/praticas/trabalho/regras/primeira-4.png"
+            alt = "Continuar a semear">
+        </div>
+
+        <hr>
+
+        <div class = "flex-container flex-column">
+          <span class = "rules-title">Última semente em armazém</span>
+          <p style = "padding-left: 25px;">
+            Volta a jogar se a <strong>última</strong> semente for semeada for no seu próprio <strong>armazém</strong>
+          </p>
+          <p style = "padding-left: 25px;">
+            Semeando cavidade agora vazia, a última semente cai no armazém e volta a jogar
+          </p>
+          <img src = "https://www.dcc.fc.up.pt/~zp/SeWenta/LTW21/praticas/trabalho/regras/ultima-armazem.png"
+            alt = "Última semente em armazém">
+        </div>
+
+        <hr>
+
+        <div class = "flex-container flex-column">
+          <span class = "rules-title">Última semente em cavidade vazia</span>
+          <p style = "padding-left: 25px;">
+            Se a <strong>última</strong> semente calhar numa <strong>sua</strong> cavidade vazia, transferir
+            para o seu armazém as sementes
+          </p>
+          <ul>
+            <li>na cavidade <strong>oposta</strong>, do adversário</li>
+            <li>assim como essa última semente semeada</li>
+          </ul>
+          <img src = "https://www.dcc.fc.up.pt/~zp/SeWenta/LTW21/praticas/trabalho/regras/ultima-vazia.png "
+            alt = "Última semente em cavidade vazia">
+        </div>
+
+        <hr>
+
+        <div class = "flex-container flex-column">
+          <span class = "rules-title">Terminar</span>
+          <ul>
+            <li>Jogo termina quando um dos jogadores não pode jogar</li>
+            <li>… porque todas as suas cavidades estão vazias</li>
+            <li>O outro jogador recolhe sementes nas suas cavidades …</li>
+            <li>… que são colocadas no seu armazém</li>
+            <li>… Ganha jogador cujo armazém tem mais sementes</li>
+          </ul>
+          <img src = "https://www.dcc.fc.up.pt/~zp/SeWenta/LTW21/praticas/trabalho/regras/final.png" alt = "Terminar">
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- FIND GAME SLIDER -->
+    <div class = "slider" id = "find-game-slider">
+      <span class = "close-btn">&times;</span>
+        <form id = "findGameForm" class = "login-container">
+          <label for = "group"><b>Group ID</b></label>
+          <input type = "text" placeholder = "Enter a group number" id = "group" name = "group" required>
+  
+          <button class = "btn" id = "findGameButton">Login</button>
+        </form>
+    </div>   
+
+    <!-- LOGIN SLIDER -->
+    <div class = "slider" id = "login-slider">
+      <span class = "close-btn">&times;</span>
+      <div class = "slider-content flex-container flex-column" id = "login-content">
+        <form id = "loginForm" class = "login-container">
+          <label for = "usr"><b>Username</b></label>
+          <input type = "text" placeholder = "Enter Username" id = "usr" name = "usr" required>
+  
+          <label for = "pwd"><b>Password</b></label>
+          <input type = "password" placeholder = "Enter Password" id = "pwd" name = "pwd" required>
+  
+          <button class = "btn" id = "loginButton">Login</button>
+        </form>
+      </div>
+    </div>    
+    
+    <!-- DOM BUILD OF THE BOARD AND FEED-->
+    <div class = "flex-container" id = "display">
+      <div class = "flex-container" id = "board"></div>
+      <div id = "feed"></div>
+    </div>
+    <div class="buttons flex-container j-between">
+      <div class="leave-button">Leave</div>
+      <div class="rankings-button">Rankings</div>
+    </div>
+
+    <div class = "scoreboard-div">
+      <table class = "scoreboard" id = "rankings" hidden>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Victories</th>
+            <th>Games</th>
+          </tr>
+        </thead>
+  
+        <tbody id = "scoreboard-body"></tbody>
+      </table>
+    </div>
+    
+  </body>
+</html>
